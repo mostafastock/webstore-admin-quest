@@ -10,7 +10,15 @@ import { AdminLayout } from "@/components/admin/AdminLayout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/admin/Dashboard";
 import Products from "./pages/admin/Products";
+import ProductForm from "./pages/admin/ProductForm";
 import Orders from "./pages/admin/Orders";
+import Collections from "./pages/admin/Collections";
+import Bundles from "./pages/admin/Bundles";
+import Offers from "./pages/admin/Offers";
+import Shipping from "./pages/admin/Shipping";
+import Notifications from "./pages/admin/Notifications";
+import Popups from "./pages/admin/Popups";
+import Settings from "./pages/admin/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +55,26 @@ const App = () => (
                 }
               />
               <Route
+                path="/admin/products/new"
+                element={
+                  <ProtectedRoute>
+                    <AdminLayout>
+                      <ProductForm />
+                    </AdminLayout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/products/:id"
+                element={
+                  <ProtectedRoute>
+                    <AdminLayout>
+                      <ProductForm />
+                    </AdminLayout>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
                 path="/admin/orders"
                 element={
                   <ProtectedRoute>
@@ -56,16 +84,12 @@ const App = () => (
                   </ProtectedRoute>
                 }
               />
-              {/* Placeholder routes for other admin pages */}
               <Route
                 path="/admin/collections"
                 element={
                   <ProtectedRoute>
                     <AdminLayout>
-                      <div className="text-center py-12">
-                        <h2 className="text-2xl font-bold">Collections</h2>
-                        <p className="text-muted-foreground mt-2">Coming soon...</p>
-                      </div>
+                      <Collections />
                     </AdminLayout>
                   </ProtectedRoute>
                 }
@@ -75,10 +99,7 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <AdminLayout>
-                      <div className="text-center py-12">
-                        <h2 className="text-2xl font-bold">Bundles</h2>
-                        <p className="text-muted-foreground mt-2">Coming soon...</p>
-                      </div>
+                      <Bundles />
                     </AdminLayout>
                   </ProtectedRoute>
                 }
@@ -88,10 +109,7 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <AdminLayout>
-                      <div className="text-center py-12">
-                        <h2 className="text-2xl font-bold">Offers</h2>
-                        <p className="text-muted-foreground mt-2">Coming soon...</p>
-                      </div>
+                      <Offers />
                     </AdminLayout>
                   </ProtectedRoute>
                 }
@@ -101,10 +119,7 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <AdminLayout>
-                      <div className="text-center py-12">
-                        <h2 className="text-2xl font-bold">Shipping</h2>
-                        <p className="text-muted-foreground mt-2">Coming soon...</p>
-                      </div>
+                      <Shipping />
                     </AdminLayout>
                   </ProtectedRoute>
                 }
@@ -114,10 +129,7 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <AdminLayout>
-                      <div className="text-center py-12">
-                        <h2 className="text-2xl font-bold">Notifications</h2>
-                        <p className="text-muted-foreground mt-2">Coming soon...</p>
-                      </div>
+                      <Notifications />
                     </AdminLayout>
                   </ProtectedRoute>
                 }
@@ -127,10 +139,7 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <AdminLayout>
-                      <div className="text-center py-12">
-                        <h2 className="text-2xl font-bold">Popups</h2>
-                        <p className="text-muted-foreground mt-2">Coming soon...</p>
-                      </div>
+                      <Popups />
                     </AdminLayout>
                   </ProtectedRoute>
                 }
@@ -140,10 +149,7 @@ const App = () => (
                 element={
                   <ProtectedRoute>
                     <AdminLayout>
-                      <div className="text-center py-12">
-                        <h2 className="text-2xl font-bold">Settings</h2>
-                        <p className="text-muted-foreground mt-2">Coming soon...</p>
-                      </div>
+                      <Settings />
                     </AdminLayout>
                   </ProtectedRoute>
                 }

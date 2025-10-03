@@ -30,17 +30,17 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-background via-accent/20 to-background p-4">
-      <Card className="w-full max-w-md shadow-lg">
-        <CardHeader className="space-y-4 text-center">
-          <div className="mx-auto h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center">
-            <Package className="h-6 w-6 text-primary-foreground" />
-          </div>
-          <div>
-            <CardTitle className="text-2xl">Welcome Back</CardTitle>
-            <CardDescription>
-              Sign in to your admin account to manage your store
-            </CardDescription>
+    <div className="flex min-h-screen items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-md border-border/50">
+        <CardHeader className="space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Package className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <CardTitle className="text-2xl">Admin Login</CardTitle>
+              <CardDescription>Access your store dashboard</CardDescription>
+            </div>
           </div>
         </CardHeader>
         <CardContent>
@@ -50,7 +50,7 @@ export default function Login() {
               <Input
                 id="username"
                 type="text"
-                placeholder="admin"
+                placeholder="Enter username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -62,7 +62,7 @@ export default function Login() {
               <Input
                 id="password"
                 type="password"
-                placeholder="••••••••"
+                placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -74,11 +74,6 @@ export default function Login() {
               {isLoading ? 'Signing in...' : 'Sign In'}
             </Button>
           </form>
-          
-          <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-            <p className="text-sm text-muted-foreground text-center mb-2">Test Credentials:</p>
-            <p className="text-xs text-center font-mono">username: admin / password: admin</p>
-          </div>
         </CardContent>
       </Card>
     </div>
